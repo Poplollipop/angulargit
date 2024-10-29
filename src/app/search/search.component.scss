@@ -1,0 +1,23 @@
+.container {
+    border: 2px gray solid;
+    width: 40%;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.row {
+    align-items: center; 
+}
+
+.input-group {
+    width: 100%;
+}
+
+.col-auto {
+    display: flex;
+    align-items: center;
+}
+
+.mb-2 {
+    margin-bottom: 10px;
+}
