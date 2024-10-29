@@ -1,0 +1,26 @@
+.time {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: flex-end;
+}
+
+.container{
+    margin-top: 20px;
+}
+
+.survey-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin-bottom: 50px;
+}
+
+.survey-content label {
+    margin-bottom: 5px; 
+}
+
+.btn{
+    display: flex; 
+    justify-content: flex-end;
+    gap: 30px;
+}

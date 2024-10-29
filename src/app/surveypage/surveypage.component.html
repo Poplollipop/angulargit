@@ -1,0 +1,43 @@
+<div class="d-flex justify-content-end" style="height: 200px; position: absolute; top: 0; right: 0;">
+    <div class="p-2">{{ currentDate | date: 'yyyy/MM/dd' }}</div>
+    <div class="p-2">－</div>
+    <div class="p-2">{{ endDate | date: 'yyyy/MM/dd' }}</div>
+</div>
+<div class="container">
+    <h2 class="text-center mb-3">問卷1</h2>
+    <div class="text-left mb-3">親愛的參與者：
+        感謝您參加本次問卷調查！這份問卷旨在收集有關 [主題] 的意見和建議，以幫助我們更好地了解您的需求與期望。您的反饋將對我們的研究和未來計劃產生重要影響。
+        調查目的：
+        本問卷的主要目的是探索 [具體目的，例如：消費者行為、服務滿意度、產品需求等]，並分析相關數據以改進我們的產品/服務。</div>
+    <div class="survey-content">
+        <label for="name">姓名：</label>
+        <input type="text" id="name" /><br>
+        <label for="phone">手機：</label>
+        <input type="text" id="phone" /><br>
+        <label for="email">E-mail：</label>
+        <input type="text" id="email" /><br>
+        <label for="age">年齡：</label>
+        <input type="text" id="age" />
+    </div>
+
+    <div>1.請選取最喜歡的人（必填）<br>
+        <input type="radio" /><label for="">和金銀(國建中學)</label><br>
+        <input type="radio" /><label for="">張國棟(建寧中學)</label><br>
+        <input type="radio" /><label for="">金和銀(中建中學)</label><br>
+        <input type="radio" /><label for="">銀和金(建中中學)</label>
+    </div><br>
+
+    <div>2.請說明理由</div>
+    <textarea name="" id="" cols="" rows=""></textarea><br>
+    <br>
+    <div>3.請選取在活動開始前有聽過的人（必填）<br>
+        <input type="radio" /><label for="">和金銀(國建中學)</label><br>
+        <input type="radio" /><label for="">張國棟(建寧中學)</label><br>
+        <input type="radio" /><label for="">金和銀(中建中學)</label><br>
+        <input type="radio" /><label for="">銀和金(建中中學)</label>
+    </div>
+    <div class="btn">
+        <button type="button">修改</button>
+        <button type="submit">確認</button>
+    </div>
+</div>
