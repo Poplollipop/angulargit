@@ -5,9 +5,9 @@ import {MatTabsModule} from '@angular/material/tabs';
   selector: 'app-insidepage',
   standalone: true,
   imports: [MatTabsModule],
-  templateUrl: './insidepage.component.html',
-  styleUrl: './insidepage.component.scss'
+  templateUrl: './surveymanage.component.html',
+  styleUrl: './surveymanage.component.scss'
 })
-export class InsidepageComponent {
+export class SurveymanageComponent {
 
 }

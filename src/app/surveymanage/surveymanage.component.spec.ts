@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InsidepageComponent } from './insidepage.component';
+import { SurveymanageComponent } from './surveymanage.component';
 
 describe('InsidepageComponent', () => {
-  let component: InsidepageComponent;
-  let fixture: ComponentFixture<InsidepageComponent>;
+  let component: SurveymanageComponent;
+  let fixture: ComponentFixture<SurveymanageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InsidepageComponent]
+      imports: [SurveymanageComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(InsidepageComponent);
+    fixture = TestBed.createComponent(SurveymanageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
