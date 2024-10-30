@@ -1,7 +1,148 @@
-<p>insidepage works!</p>
-<mat-tab-group animationDuration="0ms">
-    <mat-tab label="First">Content 1</mat-tab>
-    <mat-tab label="Second">Content 2</mat-tab>
-    <mat-tab label="Third">Content 3</mat-tab>
+<div class="d-flex justify-content-center" style="width: 80%; margin: 0 auto;">
+  <mat-tab-group animationDuration="0ms">
+
+    <mat-tab label="問卷">
+      <div class="surveyname">
+        <label for="surveyName" class="text">問卷名稱：</label>
+        <input id="surveyName" style="width: 250px;" type="text" class="form-control">
+      </div>
+      <br>
+      <div class="surveycontent">
+        <label for="surveyDescription" class="text">問卷說明：</label>
+        <textarea id="surveyDescription" style="height: 200px; width: 250px;" class="form-control"></textarea>
+      </div>
+
+      <label class="text">開始時間:</label>
+      <div class="mb-3">
+        <div class="row">
+          <div class="col mb-2">
+            <div class="input-group">
+              <input class="form-control" placeholder="起始時間" name="startDate" [(ngModel)]="startDate" ngbDatepicker
+                #d="ngbDatepicker" style="width: 150px; height: 30px;" />
+              <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button" style="height: 30px;">
+                <mat-icon style="font-size: 16px;">calendar_today</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <label class="text">結束時間:</label>
+      <div class="mb-3">
+        <div class="row">
+          <div class="col mb-2">
+            <div class="input-group">
+              <input class="form-control" placeholder="結束時間" name="endDate" [(ngModel)]="endDate" ngbDatepicker
+                #dEnd="ngbDatepicker" style="width: 150px; height: 30px;" />
+              <button class="btn btn-outline-secondary" (click)="dEnd.toggle()" type="button" style="height: 30px;">
+                <mat-icon style="font-size: 16px;">calendar_today</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn">
+        <button type="button">取消</button>
+        <button type="submit">下一步</button>
+      </div>
+    </mat-tab>
+
+
+
+    <mat-tab label="題目">
+      <label for="quizName" class="text">問題：
+        <input id="quizName" style="width: 250px;" type="text" class="form-control">
+        <select>
+          <option>單選題</option>
+          <option>多選題</option>
+          <option>測試中</option>
+        </select>
+        <input style="margin-left: 5px;" type="checkbox">必填
+      </label><br>
+      <label for="quizOption" class="text">選項： (多個答案請以 ; 分隔)
+        <textarea id="quizOption" style="height: 200px; width: 250px;" class="form-control"></textarea>
+        <button type="submit">加入</button>
+      </label>
+
+
+      <div class="demo-button-container">
+        <button mat-icon-button [disabled]="!dataSource.length" (click)="removeData()" class="demo-button"
+          aria-label="Remove data">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+        <ng-container matColumnDef="quizid">
+          <th mat-header-cell *matHeaderCellDef> 編號 </th>
+          <td mat-cell *matCellDef="let element"> {{element.quizid}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="quizname">
+          <th mat-header-cell *matHeaderCellDef> 問題名稱 </th>
+          <td mat-cell *matCellDef="let element"> {{element.quizname}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="quizvariety">
+          <th mat-header-cell *matHeaderCellDef> 類型 </th>
+          <td mat-cell *matCellDef="let element"> {{element.quizvariety}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="quizmust">
+          <th mat-header-cell *matHeaderCellDef> 必填 </th>
+          <td mat-cell *matCellDef="let element">
+            <input type="checkbox" [(ngModel)]="element.quizmust" />
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="quizedit">
+          <th mat-header-cell *matHeaderCellDef> 編輯 </th>
+          <td mat-cell *matCellDef="let element"> {{element.quizedit}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <div class="btn">
+        <button type="button">上一步</button>
+        <button type="submit">送出</button>
+      </div>
+    </mat-tab>
+    <mat-tab label="問卷回饋">
+
+      <table mat-table [dataSource]="dataSource1" class="mat-elevation-z8 demo-table">
+        <ng-container matColumnDef="userId">
+          <th mat-header-cell *matHeaderCellDef class="text-center"> 編號 </th>
+          <td mat-cell *matCellDef="let element" class="text-center"> {{element.userId}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="userName">
+          <th mat-header-cell *matHeaderCellDef class="text-center"> 問題名稱 </th>
+          <td mat-cell *matCellDef="let element" class="text-center"> {{element.userName}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="doneTime">
+          <th mat-header-cell *matHeaderCellDef class="text-center"> 類型 </th>
+          <td mat-cell *matCellDef="let element" class="text-center"> {{element.doneTime}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="userReply">
+          <th mat-header-cell *matHeaderCellDef class="text-center"> 觀看回復 </th>
+          <td mat-cell *matCellDef="let element" class="text-center"> {{element.userReply}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+      </table>
+      <mat-paginator [length]="dataSource1.length" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"
+    aria-label="Select page">
+</mat-paginator>
+    </mat-tab>
+    <mat-tab label="統計" (click)="goresult()">
+
+      <button (click)="goresult()">前往統計測試鈕</button>
+
+    </mat-tab>
   </mat-tab-group>
-  
+</div>
+<router-outlet></router-outlet>

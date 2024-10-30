@@ -29,9 +29,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   { surveyId: 10, name: '問卷10', status: 'Close', starttime: '2024/02/28', endtime: '2024/05/30', result: '前往' },
 ];
 
-/**
- * @title Adding and removing data when using an array-based datasource.
- */
+
 @Component({
   selector: 'app-surveylist',
   styleUrl: './surveylist.component.scss',
