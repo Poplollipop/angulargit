@@ -24,7 +24,6 @@
     "@angular/router": "^18.2.0",
     "@angular/ssr": "^18.2.10",
     "@ng-bootstrap/ng-bootstrap": "^17.0.1",
-    "apexcharts": "^3.54.1",
     "bootstrap": "^5.3.3",
     "date-fns": "^4.1.0",
     "demo11": "file:",
