@@ -57,7 +57,7 @@ export class SurveyListComponent {
     this.table.renderRows();
   }
 
-  gotomangelist(){
-    this.router.navigateByUrl('/surveymange')
+  gotocreatelist(){
+    this.router.navigateByUrl('/surveycreate')
   }
 }

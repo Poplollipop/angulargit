@@ -1,0 +1,58 @@
+<app-surveymanage></app-surveymanage>
+<label for="quizName" class="text">問題：
+    <input id="quizName" style="width: 250px;" type="text" class="form-control">
+    <select>
+      <option>單選題</option>
+      <option>多選題</option>
+      <option>測試中</option>
+    </select>
+    <input style="margin-left: 5px;" type="checkbox">必填
+  </label><br>
+  <label for="quizOption" class="text">選項： (多個答案請以 ; 分隔)
+    <textarea id="quizOption" style="height: 200px; width: 250px;" class="form-control"></textarea>
+    <button type="submit">加入</button>
+  </label>
+
+
+  <div class="demo-button-container">
+    <button mat-icon-button [disabled]="!dataSource.length" (click)="removeData()" class="demo-button"
+      aria-label="Remove data">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+    <ng-container matColumnDef="quizid">
+      <th mat-header-cell *matHeaderCellDef> 編號 </th>
+      <td mat-cell *matCellDef="let element"> {{element.quizid}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="quizname">
+      <th mat-header-cell *matHeaderCellDef> 問題名稱 </th>
+      <td mat-cell *matCellDef="let element"> {{element.quizname}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="quizvariety">
+      <th mat-header-cell *matHeaderCellDef> 類型 </th>
+      <td mat-cell *matCellDef="let element"> {{element.quizvariety}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="quizmust">
+      <th mat-header-cell *matHeaderCellDef> 必填 </th>
+      <td mat-cell *matCellDef="let element">
+        <input type="checkbox" [(ngModel)]="element.quizmust" />
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="quizedit">
+      <th mat-header-cell *matHeaderCellDef> 編輯 </th>
+      <td mat-cell *matCellDef="let element"> {{element.quizedit}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <div class="btn">
+    <button type="button">上一步</button>
+    <button type="submit">送出</button>
+  </div>

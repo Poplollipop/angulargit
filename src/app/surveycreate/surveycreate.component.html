@@ -1,0 +1,45 @@
+<app-surveymanage></app-surveymanage>
+<div class="surveyname">
+    <label for="surveyName" class="text">問卷名稱：</label>
+    <input id="surveyName" style="width: 250px;" type="text" class="form-control">
+  </div>
+  <br>
+  <div class="surveycontent">
+    <label for="surveyDescription" class="text">問卷說明：</label>
+    <textarea id="surveyDescription" style="height: 200px; width: 250px;" class="form-control"></textarea>
+  </div>
+
+  <label class="text">開始時間:</label>
+  <div class="mb-3">
+    <div class="row">
+      <div class="col mb-2">
+        <div class="input-group">
+          <input class="form-control" placeholder="起始時間" name="startDate" [(ngModel)]="startDate" ngbDatepicker
+            #d="ngbDatepicker" style="width: 150px; height: 30px;" />
+          <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button" style="height: 30px;">
+            <mat-icon style="font-size: 16px;">calendar_today</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <label class="text">結束時間:</label>
+  <div class="mb-3">
+    <div class="row">
+      <div class="col mb-2">
+        <div class="input-group">
+          <input class="form-control" placeholder="結束時間" name="endDate" [(ngModel)]="endDate" ngbDatepicker
+            #dEnd="ngbDatepicker" style="width: 150px; height: 30px;" />
+          <button class="btn btn-outline-secondary" (click)="dEnd.toggle()" type="button" style="height: 30px;">
+            <mat-icon style="font-size: 16px;">calendar_today</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btn">
+    <button type="button">取消</button>
+    <button type="submit">下一步</button>
+  </div>
+
