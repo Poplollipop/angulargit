@@ -1,18 +1,23 @@
-<app-surveymanage></app-surveymanage>
-<label for="quizName" class="text">問題：
-    <input id="quizName" style="width: 250px;" type="text" class="form-control">
-    <select>
+<div class="container">
+  <app-surveymanage></app-surveymanage>
+
+  <div class="label-container" style="display: flex; align-items: center;">
+    <label for="quizName" class="text">問題：</label>
+    <input id="quizName" style="width: 250px; margin-right: 5px;" type="text" class="form-control">
+    <select style="margin-right: 5px;">
       <option>單選題</option>
       <option>多選題</option>
       <option>測試中</option>
     </select>
-    <input style="margin-left: 5px;" type="checkbox">必填
-  </label><br>
-  <label for="quizOption" class="text">選項： (多個答案請以 ; 分隔)
-    <textarea id="quizOption" style="height: 200px; width: 250px;" class="form-control"></textarea>
-    <button type="submit">加入</button>
-  </label>
+    <input type="checkbox">必填
+  </div><br>
 
+  <div class="label-container">
+    <label for="quizOption" class="text">選項： (多個答案請以 ; 分隔)</label>
+    <textarea id="quizOption" style="height: 200px; width: 250px;" class="form-control"
+      style="display: flex; align-items: center; width: 40%;"></textarea>
+    <button type="submit">加入</button>
+  </div><br>
 
   <div class="demo-button-container">
     <button mat-icon-button [disabled]="!dataSource.length" (click)="removeData()" class="demo-button"
@@ -52,7 +57,9 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  <div class="btn">
-    <button type="button">上一步</button>
+
+  <div class="btn d-flex" style="gap: 10px;">
+    <button (click)="gotosuveycreate()" type="button">上一步</button>
     <button type="submit">送出</button>
   </div>
+</div>

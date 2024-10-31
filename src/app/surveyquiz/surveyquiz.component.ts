@@ -3,7 +3,7 @@ import { SurveymanageComponent } from "../surveymanage/surveymanage.component";
 import { MatIconModule } from '@angular/material/icon';
 import { MatTable, MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
-
+import { Router } from '@angular/router';
 
 
 export interface Element {
@@ -29,6 +29,10 @@ const ELEMENT_DATA: Element[] = [
   styleUrl: './surveyquiz.component.scss'
 })
 export class SurveyquizComponent {
+  constructor(private router: Router) { }
+  gotosuveycreate() {
+    this.router.navigateByUrl('/surveycreate')
+  }
 
   displayedColumns: string[] = ['quizid', 'quizname', 'quizvariety', 'quizmust', 'quizedit'];
   dataSource = [...ELEMENT_DATA];
