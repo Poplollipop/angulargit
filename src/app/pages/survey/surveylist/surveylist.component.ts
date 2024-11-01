@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SearchComponent } from "../search/search.component";
+import { SearchComponent } from "./search/search.component";
 import { ViewChild } from '@angular/core';
 import { MatTable, MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';

@@ -1,13 +1,13 @@
 import { Routes } from "@angular/router";
 import { HomepageComponent } from "./pages/homepage/homepage.component";
-import { SurveycreateComponent } from "./pages/survey/surveycreate/surveycreate.component";
-import { SurveyfeedbackComponent } from "./pages/survey/surveyfeedback/surveyfeedback.component";
 import { SurveyListComponent } from "./pages/survey/surveylist/surveylist.component";
-import { SurveymanageComponent } from "./pages/survey/surveymanage/surveymanage.component";
 import { SurveypageComponent } from "./pages/survey/surveypage/surveypage.component";
-import { SurveyquizComponent } from "./pages/survey/surveyquiz/surveyquiz.component";
 import { SurveyresultComponent } from "./pages/survey/surveyresult/surveyresult.component";
-import { SurveystatisticsComponent } from "./pages/survey/surveystatistics/surveystatistics.component";
+import { SurveycreateComponent } from "./pages/surveyedit/surveycreate/surveycreate.component";
+import { SurveyfeedbackComponent } from "./pages/surveyedit/surveyfeedback/surveyfeedback.component";
+import { SurveymanageComponent } from "./pages/surveyedit/surveymanage/surveymanage.component";
+import { SurveyquizComponent } from "./pages/surveyedit/surveyquiz/surveyquiz.component";
+import { SurveystatisticsComponent } from "./pages/surveyedit/surveystatistics/surveystatistics.component";
 
 
 
