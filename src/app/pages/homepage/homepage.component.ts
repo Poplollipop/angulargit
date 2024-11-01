@@ -12,7 +12,7 @@ export class HomepageComponent {
   constructor(private router : Router){}
   
   
-  gotosurveylist(): void{
+  gotologin(): void{
     this.router.navigateByUrl('/surveylist')
     }
 }
