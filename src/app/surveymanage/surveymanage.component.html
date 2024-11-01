@@ -1,6 +1,6 @@
 <nav mat-tab-nav-bar mat-stretch-tabs="false" mat-align-tabs="start" [tabPanel]="tabPanel">
   @for (link of links; track link) {
-  <a mat-tab-link (click)="activePath = link.path" [active]="link.path == activePath" [routerLink]="link.path">
+  <a mat-tab-link (click)="onActivate(link.path)" [active]="activePath === link.path" [routerLink]="link.path" >
     {{ link.label }}
   </a>
   }
