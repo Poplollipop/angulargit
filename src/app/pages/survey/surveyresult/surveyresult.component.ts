@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Chart, registerables } from 'chart.js';
-Chart.register(...registerables)
+
 
 @Component({
   selector: 'app-surveyresult',
@@ -12,7 +11,7 @@ Chart.register(...registerables)
 export class SurveyresultComponent {
 
   constructor(){
-    
+
   }
 
 }
