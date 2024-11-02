@@ -2,11 +2,11 @@
     <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
         <h1>登入</h1>
         <div class="input-box">
-            <input type="text" name="username" ngModel placeholder="用戶名" required>
+            <input type="text" name="username" [(ngModel)]="username" placeholder="用戶名" required>
             <i class='bx bxs-user'></i>
         </div>
         <div class="input-box">
-            <input type="password" name="password" ngModel placeholder="密碼" required>
+            <input type="password" name="password" [(ngModel)]="password" placeholder="密碼" required>
             <i class='bx bxs-lock'></i>
         </div>
         <div class="remember-forgot">
@@ -15,10 +15,10 @@
             </label>
             <a href="#">忘記密碼</a>
         </div>
-        <button type="submit" class="submitbtn">登入</button>
+        <button type="submit" class="submitbtn" (click)="login()">登入</button>
         <div class="register-link">
             <p>還沒有帳號？</p>
-            <a href="#">註冊</a>
+            <button type="submit" class="submitbtn" (click)="register()">註冊</button>
         </div>
     </form>
 </div>

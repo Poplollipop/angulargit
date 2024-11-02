@@ -8,13 +8,16 @@ import { SurveyfeedbackComponent } from "./pages/surveyedit/surveyfeedback/surve
 import { SurveymanageComponent } from "./pages/surveyedit/surveymanage/surveymanage.component";
 import { SurveyquizComponent } from "./pages/surveyedit/surveyquiz/surveyquiz.component";
 import { SurveystatisticsComponent } from "./pages/surveyedit/surveystatistics/surveystatistics.component";
-import { LoginpageComponent } from "./pages/loginpage/loginpage.component";
+import { LoginpageComponent } from "./pages/login/loginpage.component";
+import { RegisterComponent } from "./pages/register/register.component";
+
 
 
 
 
 export const routes: Routes = [
     { path: '', component: HomepageComponent },
+    { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginpageComponent },
     { path: 'surveymanage', component: SurveymanageComponent },
     { path: 'surveystatistics', component: SurveystatisticsComponent },
